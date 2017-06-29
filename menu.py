@@ -4,3 +4,5 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 maxPanels = nuke.toNode('preferences')['maxPanels']
 maxPanels.setValue(2)
+
+m = menubar.addMenu("Personal")
