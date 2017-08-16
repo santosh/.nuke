@@ -3,7 +3,7 @@ import PySide
 from PySide import QtCore
 
 print("Nuke is starting with PySide", PySide.__version__,
-	"and QtCore version ", QtCore.qVersion())
+	"and QtCore version", QtCore.qVersion())
 
 # Project Settings > Default format: HD 1920x1080
 nuke.knobDefault("Root.format", "HD_1080")
