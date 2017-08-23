@@ -5,4 +5,9 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 maxPanels = nuke.toNode('preferences')['maxPanels']
 maxPanels.setValue(2)
 
-m = menubar.addMenu("Personal")
+# Santosh Menubar
+SantoshMenu = menubar.addMenu("Santosh")
+
+# Santosh Toolbar
+toolbar = nuke.toolbar('Nodes')
+SMenu = toolbar.addMenu('Santosh Tools', icon='V_Victor.png')

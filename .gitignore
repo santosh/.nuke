@@ -1,3 +1,10 @@
 preferences*
 recent_files
 uistate.ini
+.gitignore
+FileChooser_Favorites.pref
+MTTF/*
+ScriptEditorHistory.xml
+Workspaces/*
+.DS_Store
+Thumbs.db
