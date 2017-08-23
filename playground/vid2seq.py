@@ -1,11 +1,19 @@
-# getting into nuke 
-# this script writes out targa sequences from a video file
-# this script is intended to work from inside nuke
-# expects availability of quicktime
-# mostly hardcoded
-nuke.nodes.Read(file="E:/Final/Practice/MVI_8411.mov", name="Footage")
+# confirming the project dimension resolution
+projset = nuke.Root()
+projset["format"].setValue("HD_1080")
 
-footage = nuke.toNode("Footage")
-nuke.createNode("Write")
+# load video and set in & out point
+foot = nuke.nodes.Read(file="C:/Users/Santosh/Desktop/MVI_8411.MOV", name="Nuke_Class1")
 
-# nuke.nodes.Read(file="E:/Final/Practice/footage/roof_###.tga")
+# select read node and attach write node to it
+nuke.toNode("Nuke_Class1").setSelected(True)
+wr = nuke.createNode("Write")
+
+# specify the sequence path
+wr["file"].setValue("C:/Users/Santosh/Desktop/nukke/nuke_API_###.jpg")
+
+# connect to the first viewer, if many
+nukescripts.connect_selected_to_viewer(0)
+
+# perform the render, 50th to 140th frame
+nuke.render(wr, 50, 140, 1)
