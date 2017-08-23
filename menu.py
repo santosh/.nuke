@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function
 
 # Eliminates the frustration of 10 panels, defaults to 2
