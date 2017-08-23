@@ -8,3 +8,4 @@ ScriptEditorHistory.xml
 Workspaces/*
 .DS_Store
 Thumbs.db
+*.pyc
