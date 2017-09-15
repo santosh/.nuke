@@ -6,7 +6,7 @@ import S_Utils
 # Eliminates the frustration of 10 panels, defaults to 2
 
 maxPanels = nuke.toNode('preferences')['maxPanels']
-maxPanels.setValue(2)
+maxPanels.setValue(3)
 
 # Nuke's Own Menus
 # This will add dummy under Edit/Node menu
