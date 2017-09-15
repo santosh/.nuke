@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function
 import dummy
+import S_Utils
 
 # Eliminates the frustration of 10 panels, defaults to 2
 
@@ -16,7 +17,7 @@ nk.findItem('Edit/Node').addCommand('Dummy', 'nuke.createNode("Write")', 'ctrl+y
 
 # Santosh Menubar
 SantoshMenu = menubar.addMenu("$antosh")
-SantoshMenu.addCommand("Dummy", 'nuke.createNode("Write")', 'alt+y')
+SantoshMenu.addCommand("Create/Scene", 'S_Utils.Scene_3D()', 'alt+shift+s')
 
 # Santosh inside Toolbar; this is for gizmos
 toolbar = nuke.menu('Nodes')
