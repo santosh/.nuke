@@ -1,20 +1,58 @@
-# find the tutorial at nukestation.com/python-scripting-in-nuke-part-1-of-2-creating-nodes/
+# for feedback, please post here: https://github.com/santosh/.nuke/issues
 
-# using naming convention, like i b n for int, bool, node
+# using naming convention, like i b n k for int, bool, node, knob
 
-iRepeat = 10 # probably gonna be replaced by knob input
+strRepeat = nuke.getInput("Enter number of copies: ", "10")
+iRepeat = int(strRepeat) # probably gonna be replaced by knob input
 bFirstLoop = True
 
+# packing into group {{{
 nGroup = nuke.nodes.Group(name="Trails")
 nGroup.begin()
 
-nInput = nuke.nodes.Input()
+## GUI COMPONENETS BEGIN
+kX_Trans = nuke.Double_Knob("x_trans", "Translate X:")
+kX_Trans.setRange(-50.,50.)
+kX_Trans.setValue(20.)
+nGroup.addKnob(kX_Trans)
+
+kY_Trans = nuke.Double_Knob("y_trans", "Translate Y:")
+kY_Trans.setRange(-50.,50.)
+kY_Trans.setValue(20.)
+nGroup.addKnob(kY_Trans)
+
+kX_Rot = nuke.Double_Knob("rot", "Rotate:")
+kX_Rot.setRange(-20.,20.)
+kX_Rot.setValue(0.)
+nGroup.addKnob(kX_Rot)
+
+kX_Scale = nuke.Double_Knob("scale", "Scale:")
+kX_Scale.setRange(-1.,2.)
+kX_Scale.setValue(1.)
+nGroup.addKnob(kX_Scale)
+
+## GUI COMPONENTS END
+
+# calculate center of the project dimension
+# need to select a node, there's no direct way
+# Viewer1 is only generic thing in every project
+# nuke.toNode("Viewer1").setSelected(True)
+# projwidth = nuke.selectedNode().format().width()
+# projheight = nuke.selectedNode().format().height()
+
+nInput = nuke.nodes.Input() #input node is gateway into the gizmo
 nDot = nuke.nodes.Dot()
-nDot.setInput(0, nInput)
+nDot.setInput(0, nInput) # input comes to a Dot node
 
 for i in range(iRepeat):
     # translating by 20 in x and y
-    nTrans = nuke.nodes.Transform(name="transform" + str(i), translate="20 20")
+    nTrans = nuke.nodes.Transform(name="transform" + str(i),
+                                    translate="parent.x_trans parent.y_trans",
+                                    rotate = "parent.rot",
+                                    scale = "parent.scale",
+                                    center = "960 540" # this one is for HD, calculate from project setting instead
+                                    # TODO: center = "{x} {y}".format(x=projwidth/2, y=projheight/2)
+                                    )
     # create a merge node
     nMerge = nuke.nodes.Merge2(name="merge" + str(i))
     # set first input of merge to translated image
@@ -32,6 +70,8 @@ for i in range(iRepeat):
     nPrevMerge = nMerge
 
 nOutput = nuke.nodes.Output()
-nOutput.setInput(0, nMerge)
+nOutput.setInput(0, nMerge) # output node is attached to last Merge's output
 
 nGroup.end()
+
+# }}} group ends
