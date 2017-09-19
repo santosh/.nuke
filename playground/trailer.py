@@ -34,11 +34,8 @@ nGroup.addKnob(kX_Scale)
 ## GUI COMPONENTS END
 
 # calculate center of the project dimension
-# need to select a node, there's no direct way
-# Viewer1 is only generic thing in every project
-# nuke.toNode("Viewer1").setSelected(True)
-# projwidth = nuke.selectedNode().format().width()
-# projheight = nuke.selectedNode().format().height()
+projwidth = nuke.root()['format'].value().width()
+projheight = nuke.root()['format'].value().height()
 
 nInput = nuke.nodes.Input() #input node is gateway into the gizmo
 nDot = nuke.nodes.Dot()
@@ -50,8 +47,7 @@ for i in range(iRepeat):
                                     translate="parent.x_trans parent.y_trans",
                                     rotate = "parent.rot",
                                     scale = "parent.scale",
-                                    center = "960 540" # this one is for HD, calculate from project setting instead
-                                    # TODO: center = "{x} {y}".format(x=projwidth/2, y=projheight/2)
+                                    center = "{x} {y}".format(x=projwidth/2, y=projheight/2)
                                     )
     # create a merge node
     nMerge = nuke.nodes.Merge2(name="merge" + str(i))
