@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="0" w="1920" h="1080" fullscreen="1" screen="0">
+        <splitter orientation="1">
+            <split size="1214"/>
+            <splitter orientation="1">
+                <split size="1170"/>
+                <dock id="" activePageId="Viewer.1" focus="true">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="40"/>
+                <dock id="" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+            </splitter>
+            <split size="702"/>
+            <splitter orientation="2">
+                <split size="527"/>
+                <dock id="" hideTitles="1" activePageId="Properties.1">
+                    <page id="Properties.1"/>
+                </dock>
+                <split size="526"/>
+                <dock id="" hideTitles="1" activePageId="DAG.1">
+                    <page id="DAG.1"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+</layout>

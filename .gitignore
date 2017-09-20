@@ -5,7 +5,6 @@ uistate.ini
 FileChooser_Favorites.pref
 MTTF/*
 ScriptEditorHistory.xml
-Workspaces/*
 .DS_Store
 Thumbs.db
 *.pyc
