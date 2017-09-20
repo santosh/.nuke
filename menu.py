@@ -18,6 +18,7 @@ nk.findItem('Edit/Node').addCommand('Dummy', 'nuke.createNode("Write")', 'ctrl+y
 # Santosh Menubar
 SantoshMenu = menubar.addMenu("$antosh")
 SantoshMenu.addCommand("Create/Scene", 'S_Utils.Scene_3D()', 'alt+shift+s')
+SantoshMenu.addCommand("Create/R from W", "S_Utils.create_read_from_write()", "alt+j")
 
 # Santosh inside Toolbar; this is for gizmos
 toolbar = nuke.menu('Nodes')
