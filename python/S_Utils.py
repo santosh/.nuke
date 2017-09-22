@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import nuke
 import nukescripts
 
@@ -8,7 +9,7 @@ def create_read_from_write():
 	"""
 
 	sel = nuke.selectedNode()
-	
+
 	if sel.Class() == "Write":
 		read = nuke.createNode("Read")
 		read.setXpos(int(sel["xpos"].getValue()))
@@ -23,6 +24,10 @@ def create_read_from_write():
 		nuke.message("A Write node must be selected.")
 
 def Scene_3D():
+	'''
+	Create bare 3D setup consisting a Scene, Camera, Light and Renderer.
+	:return: None
+	'''
 	nuke.createNode('Light')
 	nuke.createNode('Scene')
 	nuke.createNode('ScanlineRender')
@@ -43,7 +48,11 @@ def delete_disable():
 
 def propose():
 	nuke.message("I love you!")
-	nuke.ask("Do you love me too?")
+	
+	if nuke.ask("Do you love me too?"):
+		nuke.message("I appreciate that, but it was just a joke. :P")
+	else:
+		nuke.message("So rude you are. :/")
 
 # Here for templating purpose only
 

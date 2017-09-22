@@ -23,4 +23,4 @@ SantoshMenu.addCommand("Create/R from W", "S_Utils.create_read_from_write()", "a
 # Santosh inside Toolbar; this is for gizmos
 toolbar = nuke.menu('Nodes')
 S_Nodes_Menu = toolbar.addMenu('$antoshTools', icon='S_Santosh.png')
-S_Nodes_Menu.addCommand('S_Dummy', 'nuke.createNode("Write")', 'ctrl+b', icon='S_Dummy.png')
+S_Nodes_Menu.addCommand('S_Trails', 'nuke.createNode("Trails")', 'alt+shift+t', icon='S_Trails.png')
