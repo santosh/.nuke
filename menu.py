@@ -24,3 +24,14 @@ SantoshMenu.addCommand("Create/R from W", "S_Utils.create_read_from_write()", "a
 toolbar = nuke.menu('Nodes')
 S_Nodes_Menu = toolbar.addMenu('$antoshTools', icon='S_Santosh.png')
 S_Nodes_Menu.addCommand('S_Trails', 'nuke.createNode("Trails")', 'alt+shift+t', icon='S_Trails.png')
+
+
+# NODES CUSTOMIZATONS
+#################################
+
+# Shuffle label be the input of first "in" value
+nuke.knobDefault("Shuffle.label", "[knob in]")
+
+
+#################################
+
