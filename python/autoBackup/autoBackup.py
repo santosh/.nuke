@@ -11,9 +11,9 @@ This module works on doing a backup framework.
 
 # autoBackup Settings
 ###########################################
-backup_dir = "{}/Desktop/nukebackup".format(os.path.expanduser("~"))
+BACKUP_DIR = "{}/Desktop/nukebackup".format(os.path.expanduser("~"))
 
-number_of_backups = 5
+NUMBER_OF_BACKUPS = 5
 
 # Prototype of future functionality
 #autosave_interval = 

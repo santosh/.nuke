@@ -14,13 +14,13 @@ This is done by playing a sound and showing notification window.
 ####################################
 
 # turn this to False to disable "Rendering Finished" notification
-show_notification = True
+SHOW_NOTIFICATION = True
 
 # turn this False to disable ting sound
-play_sound = True
+PLAY_SOUND = True
 
 # specify your own sound file
-sound_file = "{}/01.wav".format(os.path.dirname(__file__))
+SOUND_FILE = "{}/01.wav".format(os.path.dirname(__file__))
 
 ####################################
 
