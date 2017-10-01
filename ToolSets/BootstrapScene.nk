@@ -1,0 +1,38 @@
+set cut_paste_input [stack 0]
+version 9.0 v7
+Camera2 {
+inputs 0
+name Camera2
+selected true
+xpos 549
+ypos 50
+addUserKnob {20 custom}
+addUserKnob {22 revealInFinder l "Reveal in Finder" -STARTLINE}
+}
+set N5be90c00 [stack 0]
+push $N5be90c00
+push $cut_paste_input
+Light2 {
+depthmap_slope_bias 0.01
+name Light1
+selected true
+xpos 395
+ypos -27
+}
+Scene {
+inputs 2
+name Scene2
+selected true
+xpos 410
+ypos 63
+}
+push 0
+ScanlineRender {
+inputs 3
+conservative_shader_sampling false
+motion_vectors_type distance
+name ScanlineRender2
+selected true
+xpos 400
+ypos 200
+}

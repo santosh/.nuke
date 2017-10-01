@@ -23,19 +23,6 @@ def create_read_from_write():
     else:
         nuke.message("A Write node must be selected.")
 
-def Scene_3D():
-    '''
-    Create bare 3D setup consisting a Scene, Camera, Light and Renderer.
-    :return: None
-    '''
-    nuke.createNode('Light')
-    nuke.createNode('Scene')
-    nuke.createNode('ScanlineRender')
-    nuke.createNode('Camera')
-    
-    # select scalinerender
-    # nukescripts.connect_selected_to_viewer(0)
-
 def disable(x):
     '''Disables all X nodes
     :param x: String class of node to be selected

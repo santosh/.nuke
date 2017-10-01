@@ -18,7 +18,6 @@ nodemenu.findItem('Channel/Shuffle').setShortcut('n')
 
 # Santosh Menubar
 SantoshMenu = menubar.addMenu("$antosh")
-SantoshMenu.addCommand("Create/Scene", 'S_Utils.Scene_3D()', 'alt+shift+s')
 SantoshMenu.addCommand("Create/R from W", "S_Utils.create_read_from_write()", "alt+j")
 SantoshMenu.addCommand("Disable", "S_Utils.disable(nuke.getInput('Which nodes to disable? Warning: Undoable!', 'Read'))")
 SantoshMenu.addCommand("Select", "S_Utils.select(nuke.getInput('Which nodes to select?', 'Read'))")
@@ -44,3 +43,4 @@ nuke.knobDefault("Merge.bbox", "3")
 
 #################################
 
+# REMEMBER: USING CANCEL BUTTON IS REDUNDANT IN UI DESIGN

@@ -1,0 +1,34 @@
+set cut_paste_input [stack 0]
+version 9.0 v7
+push $cut_paste_input
+Gizmo {
+ name Despill
+ selected true
+ xpos 650
+ ypos 356
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 143
+  ypos -61
+ }
+ Expression {
+  expr1 "(r+b)/2>g? g:(r+b)/2"
+  name Expression1
+  xpos 143
+  ypos -21
+ }
+ Grade {
+  white {1 1 1 1}
+  gamma 0.91
+  name Grade1
+  xpos 143
+  ypos 17
+ }
+ Output {
+  name Output1
+  xpos 143
+  ypos 117
+ }
+end_group
