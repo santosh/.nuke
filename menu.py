@@ -5,6 +5,8 @@ import S_Utils
 # Eliminates the frustration of 10 panels, defaults to 2
 nuke.toNode('preferences')['maxPanels'].setValue(3)
 
+# nuke.addFavoriteDir("User Settings", "C:/Users/sntshk/.nuke/", nuke.PYTHON)
+
 # this is the top nuke menubar
 nukemenu = nuke.menu('Nuke')
 # adds custom item in existing menu

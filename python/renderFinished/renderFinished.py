@@ -30,7 +30,7 @@ def notify_user():
 	"""
 
 	if play_sound:
-		PySide.QtGui.QSound.play(sound_file)
+		PySide.QtGui.QSound.play(SOUND_FILE)
 
 	if show_notification:
 		nuke.message("Rendering Finished")

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function
 import PySide
-from platform import python_version
+import platform
 from PySide import QtCore
 
 print("Nuke: {nuke}, Python: {python}, PySide: {pyside}, QtCore: {qtcore})".format(
-   nuke="9.0v7", # https://community.foundry.com/discuss/topic/135414/how-to-get-nuke-version-from-within-python
-   python=python_version(),
+   nuke=nuke.NUKE_VERSION_STRING,
+   python=platform.python_version(),
    pyside=PySide.__version__,
    qtcore=QtCore.qVersion())
    )
