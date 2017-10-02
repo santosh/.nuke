@@ -49,6 +49,17 @@ def select(x):
 def delete_disable():
     '''Deletes disable nodes'''
 
+def restartNuke():
+    """
+    Restarts Nuke.
+    :return: None
+    """
+    # https://community.foundry.com/discuss/topic/135555/
+    nuke.scriptNew('')
+    nuke.modified(False) # doesn't ask for saving
+    nuke.scriptExit()
+
+
 def propose():
     nuke.message("I love you!")
     

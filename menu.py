@@ -10,7 +10,7 @@ nuke.toNode('preferences')['maxPanels'].setValue(3)
 # this is the top nuke menubar
 nukemenu = nuke.menu('Nuke')
 # adds custom item in existing menu
-nukemenu.findItem('Edit/Node').addCommand('Dummy', 'nuke.createNode("Write")', "ctrl+y", index=0)
+nukemenu.findItem('File').addCommand('Restart Nuke', 'S_Utils.restartNuke()', "ctrl+shift+q", index=-1, shortcutContext=1)
 
 # Nuke's Node menu
 nodemenu = nuke.menu("Nodes")
