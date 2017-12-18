@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import nuke
 import nukescripts
+import sys
 
 def create_read_from_write():
     """
@@ -59,12 +60,3 @@ def restartNuke():
     nuke.modified(False) # doesn't ask for saving
     nuke.scriptExit()
 
-
-def propose():
-    nuke.message("I love you!")
-    
-    if nuke.ask("Do you love me too?"):
-        nuke.message("I appreciate that, but it was just a joke. :P")
-    else:
-        nuke.message("So rude you are. :/")
-        

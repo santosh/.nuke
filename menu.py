@@ -19,9 +19,8 @@ nodemenu = nuke.menu("Nodes")
 nodemenu.findItem('Channel/Shuffle').setShortcut('n')
 
 # Santosh Menubar
-SantoshMenu = menubar.addMenu("$antosh")
+SantoshMenu = menubar.addMenu("S_Scriptlets")
 SantoshMenu.addCommand("Create/R from W", "S_Utils.create_read_from_write()", "alt+j")
-SantoshMenu.addCommand("Disable", "S_Utils.disable(nuke.getInput('Which nodes to disable? Warning: Undoable!', 'Read'))")
 SantoshMenu.addCommand("Select", "S_Utils.select(nuke.getInput('Which nodes to select?', 'Read'))")
 
 # Santosh inside Toolbar; this is for gizmos

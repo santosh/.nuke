@@ -29,9 +29,9 @@ def notify_user():
 	show a notification and play a ting sound when render is done
 	"""
 
-	if play_sound:
+	if PLAY_SOUND:
 		PySide.QtGui.QSound.play(SOUND_FILE)
 
-	if show_notification:
+	if SHOW_NOTIFICATION:
 		nuke.message("Rendering Finished")
 
