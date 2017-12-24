@@ -9,3 +9,4 @@ ScriptEditorHistory.xml
 Thumbs.db
 *.pyc
 .idea/
+project.sublime*

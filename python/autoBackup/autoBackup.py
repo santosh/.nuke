@@ -55,7 +55,7 @@ def open_backup_dir():
 	"""
 
 	script_name = get_current_script_name()
-	script_backup_dir = "{}/{}".format(backup_dir, script_name)
+	script_backup_dir = "{}/{}".format(BACKUP_DIR, script_name)
 	open_dir(script_backup_dir)
 
 def make_backup():
@@ -65,18 +65,18 @@ def make_backup():
 	"""
 
 	script_name = get_current_script_name()
-	script_backup_dir = "{}/{}".format(backup_dir, script_name)
+	script_backup_dir = "{}/{}".format(BACKUP_DIR, script_name)
 	current_time = time.strftime("%Y%m%d-%H%M")
 
 	if not os.path.isdir(script_backup_dir):
 		os.makedirs(script_backup_dir)
 
-	try:
-		nuke.removeOnScriptSave(make_backup)
-		nuke.scriptSave("{}/bckp_{}_{}.nk".format(script_backup_dir, current_time, script_name))
-		nuke.addOnScriptSave(make_backup)
-	except:
-		nuke.message("Couldn't write a backup file")
+		try:
+			nuke.removeOnScriptSave(make_backup)
+			nuke.scriptSave("{}/bckp_{}_{}.nk".format(script_backup_dir, current_time, script_name))
+			nuke.addOnScriptSave(make_backup)
+		except:
+			nuke.message("Couldn't write a backup file")
 
 	delete_older_backup_versions(script_backup_dir)
 
@@ -95,8 +95,8 @@ def delete_older_backup_versions(path):
 		if os.path.splitext(filename)[1] == ".nk":
 			files_list.append(filename)
 
-	if len(files_list) > number_of_backups:
-		keep_list = files_list[-number_of_backups:]
+	if len(files_list) > NUMBER_OF_BACKUPS:
+		keep_list = files_list[-NUMBER_OF_BACKUPS:]
 
 	for filename in files_list:
 		if filename not in keep_list:

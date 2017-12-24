@@ -7,7 +7,7 @@ iRepeat = int(strRepeat) # probably gonna be replaced by knob input
 bFirstLoop = True
 
 # packing into group {{{
-nGroup = nuke.nodes.Group(name="Trails")
+nGroup = nuke.nodes.Group(name="S_Trails")
 nGroup.begin()
 
 ## GUI COMPONENETS BEGIN
