@@ -27,7 +27,7 @@ SantoshMenu.addCommand("Select", "S_Utils.select(nuke.getInput('Which nodes to s
 toolbar = nuke.menu('Nodes')
 S_Nodes_Menu = toolbar.addMenu('$antoshTools', icon='S_Santosh.png')
 S_Nodes_Menu.addCommand('S_Trails', 'nuke.createNode("S_Trails")', 'alt+shift+t', icon='S_Trails.png')
-
+S_Nodes_Menu.addCommand('S_FrequencySep', 'nuke.createNode("S_FrequencySep")', icon='S_FrequencySep.png')
 
 # NODES CUSTOMIZATONS
 #################################
