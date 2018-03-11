@@ -3,7 +3,7 @@ from __future__ import absolute_import, division, print_function
 import S_Utils
 
 # Eliminates the frustration of 10 panels, defaults to 2
-nuke.toNode('preferences')['maxPanels'].setValue(3)
+nuke.toNode('preferences')['maxPanels'].setValue(5)
 
 # nuke.addFavoriteDir("User Settings", "C:/Users/sntshk/.nuke/", nuke.PYTHON)
 
