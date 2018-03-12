@@ -4,6 +4,8 @@ import S_Utils
 
 # Eliminates the frustration of 10 panels, defaults to 2
 nuke.toNode('preferences')['maxPanels'].setValue(5)
+# expand properties bin when node selected, otherwise collapse
+nuke.toNode('preferences')['ExpandSelection'].setValue(True)
 
 # nuke.addFavoriteDir("User Settings", "C:/Users/sntshk/.nuke/", nuke.PYTHON)
 
